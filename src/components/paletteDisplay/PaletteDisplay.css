@@ -1,0 +1,21 @@
+.palette-display {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5vh;
+  }
+  
+  .color-box {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+  }
+
+  .color-container {
+    width: 105px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
