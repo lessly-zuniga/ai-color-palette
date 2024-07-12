@@ -1,6 +1,6 @@
 import React from "react";
 import PaletteGeneratorScreen from "./PaletteGeneratorScreen.tsx";
-import { fetchPalette } from "../../api/api.ts"; // Asegúrate de que la ruta es correcta
+import { fetchPalette } from "../../api/api.ts";
 import { hexToRgb, rgbToHex } from "../../utils/functions.ts";
 
 const PaletteGeneratorController = () => {
