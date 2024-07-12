@@ -32,16 +32,16 @@ const PaletteGeneratorScreen = ({ generatePalette }) => {
           scrollToSection(imagePaletteSectionRef)
         }
       />
-      <div ref={inputSectionRef}>
-        <InputSection
-          generatePalette={handleGeneratePalette}
-          palette={palette}
-        />
-      </div>
       <div ref={imagePaletteSectionRef}>
         <ImagePaletteSection
           onImageUpload={handleImageUpload}
           uploadedImage={uploadedImage}
+        />
+      </div>
+      <div ref={inputSectionRef}>
+        <InputSection
+          generatePalette={handleGeneratePalette}
+          palette={palette}
         />
       </div>
     </div>

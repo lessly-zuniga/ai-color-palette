@@ -1,8 +1,38 @@
 .input-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.input-container {
+  margin-bottom: 20px;
+}
+
+.styled-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.styled-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.styled-button:hover {
+  background-color: #0056b3;
+}
+
+.saved-palettes {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
