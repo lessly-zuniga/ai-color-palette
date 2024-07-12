@@ -1,0 +1,45 @@
+.saved-palettes {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.saved-palette {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  height: 150px;
+  position: relative;
+}
+
+.color-block {
+  flex: 1;
+  height: 100%;
+  transition: flex 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.color-block:hover {
+  flex: 3;
+}
+
+.color-code {
+  position: absolute;
+  color: #fff;
+  font-size: 14px;
+  background: rgba(156, 154, 154, 0.5);
+  padding: 2px 4px;
+  border-radius: 10px;
+  display: none;
+}
+
+.color-block:hover .color-code {
+  display: block;
+}
