@@ -3,10 +3,12 @@ import "./ImagePaletteSection.css";
 import ColorThief from "colorthief";
 import DefaultImage from "../../assets/images/default-palette-img.png";
 import ColorSlider from "../colorSlider/ColorSlider.tsx";
+import { isDarkColor, rgbToHex } from "../../utils/functions.ts";
 
 const ImagePaletteSection = ({ onImageUpload, uploadedImage }) => {
   const [colors, setColors] = useState<number[][]>([]);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [copyMessage, setCopyMessage] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
 
@@ -81,6 +83,25 @@ const ImagePaletteSection = ({ onImageUpload, uploadedImage }) => {
     }
   }, [uploadedImage]);
 
+  const copyToClipboard = (color: string) => {
+    navigator.clipboard.writeText(color).then(
+      () => {
+        setCopyMessage(`${color} copied to clipboard!`);
+        setTimeout(() => setCopyMessage(null), 2000);
+      },
+      () => {
+        setCopyMessage(`Failed to copy ${color}`);
+        setTimeout(() => setCopyMessage(null), 2000);
+      }
+    );
+  };
+
+  const handleSelectedColorClick = () => {
+    if (selectedColor) {
+      copyToClipboard(selectedColor);
+    }
+  };
+
   return (
     <div className="image-palette-section">
       <div className="image-palette-content">
@@ -101,7 +122,10 @@ const ImagePaletteSection = ({ onImageUpload, uploadedImage }) => {
               Upload Your Own Image
             </button>
             {selectedColor && (
-              <div className="selected-color-display">
+              <div
+                className="selected-color-display"
+                onClick={handleSelectedColorClick}
+              >
                 <div
                   className="selected-color-preview"
                   style={{ backgroundColor: selectedColor }}
@@ -116,16 +140,33 @@ const ImagePaletteSection = ({ onImageUpload, uploadedImage }) => {
             />
           </div>
           <div className="color-palette">
-            {colors.map((color, index) => (
-              <div
-                key={index}
-                className={`color-swatch ${
-                  selectedColor === `rgb(${color.join(",")})` ? "selected" : ""
-                }`}
-                style={{ backgroundColor: `rgb(${color.join(",")})` }}
-                onClick={() => setSelectedColor(`rgb(${color.join(",")})`)}
-              ></div>
-            ))}
+            {colors.map((color, index) => {
+              const colorString = `rgb(${color.join(",")})`;
+              const hexColor = rgbToHex(color[0], color[1], color[2]);
+              return (
+                <div
+                  key={index}
+                  className={`color-swatch ${
+                    selectedColor === colorString ? "selected" : ""
+                  }`}
+                  style={{ backgroundColor: colorString }}
+                  onClick={() => {
+                    setSelectedColor(colorString);
+                    copyToClipboard(colorString);
+                  }}
+                >
+                  <p
+                    className="color-text"
+                    style={{
+                      color: isDarkColor(colorString) ? "#FFFFFF" : "#000000",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {hexColor.toUpperCase()}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className="image-preview-container">
@@ -141,6 +182,7 @@ const ImagePaletteSection = ({ onImageUpload, uploadedImage }) => {
           </div>
         </div>
       </div>
+      {copyMessage && <div className="copy-message">{copyMessage}</div>}
     </div>
   );
 };

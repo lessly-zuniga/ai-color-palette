@@ -2,6 +2,8 @@
   display: flex;
   gap: 35px;
   align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10vh;
 }
 
 .saved-palette {
@@ -24,6 +26,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  cursor: pointer;
 }
 
 .color-block:hover {
@@ -32,9 +35,7 @@
 
 .color-code {
   position: absolute;
-  color: #fff;
   font-size: 14px;
-  background: rgba(156, 154, 154, 0.5);
   padding: 2px 4px;
   border-radius: 10px;
   display: none;
@@ -43,3 +44,4 @@
 .color-block:hover .color-code {
   display: block;
 }
+

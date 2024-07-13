@@ -1,21 +1,38 @@
 .palette-display {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 5vh;
-  }
-  
-  .color-box {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
-    border-radius: 7px;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
 
-  .color-container {
-    width: 105px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  
+.color-box {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.color-container {
+  width: 105px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.color-text {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.color-container:hover .color-text {
+  visibility: visible;
+  opacity: 1;
+}
+

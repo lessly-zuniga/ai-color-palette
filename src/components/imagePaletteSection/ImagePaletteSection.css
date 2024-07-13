@@ -5,6 +5,7 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
+  position: relative;
 }
 
 .image-palette-content {
@@ -154,4 +155,44 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.copy-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.copy-message::before {
+  content: "✔";
+  font-size: 1.2em;
+  color: #4caf50;
+}
+
+.color-text {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.color-text {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.color-swatch:hover .color-text {
+  visibility: visible;
+  opacity: 1;
 }
