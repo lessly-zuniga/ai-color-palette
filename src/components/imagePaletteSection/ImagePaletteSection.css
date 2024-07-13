@@ -75,10 +75,6 @@
   cursor: pointer;
 }
 
-.color-swatch.selected {
-  border: 2px solid rgba(0, 0, 0, 0.1);
-}
-
 .styled-button {
   background-color: var(--secondary-color);
   color: white;

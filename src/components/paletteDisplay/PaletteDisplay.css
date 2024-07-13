@@ -4,6 +4,7 @@
   align-items: center;
   margin-top: 5vh;
   margin-bottom: 5vh;
+  flex-wrap: wrap;
 }
 
 .color-box {
@@ -16,6 +17,7 @@
   justify-content: center;
   cursor: pointer;
   position: relative;
+  transition: width 0.3s, height 0.3s;
 }
 
 .color-container {
@@ -29,6 +31,8 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s, visibility 0.3s;
+  word-wrap: break-word;
+  text-align: center;
 }
 
 .color-container:hover .color-text {
@@ -36,3 +40,40 @@
   opacity: 1;
 }
 
+.copy-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9em;
+}
+
+.copy-message::before {
+  content: "✔";
+  font-size: 1.2em;
+  color: #4caf50;
+}
+
+@media (max-width: 768px) {
+  .color-box {
+    width: 60px;
+    height: 60px;
+  }
+
+  .color-container {
+    width: 65px;
+  }
+
+  .color-text {
+    font-size: 10px;
+    padding: 2px;
+  }
+}
