@@ -8,11 +8,13 @@
   top: 0;
   width: 100%;
   z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
 .navbar-links {
   display: flex;
   gap: 40px;
+  font-weight: 500;
 }
 
 .nav-link {
@@ -23,14 +25,19 @@
   transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-.nav-link:hover,
+.nav-link:hover {
+  color: #9fb6a6;
+  border-bottom: 2px solid #9fb6a6;
+}
+
 .nav-link:focus {
   color: #ff4081;
   border-bottom: 2px solid #ff4081;
 }
 
 .nav-link.active {
-  border-bottom: 2px solid #ff4081;
+  color: #ff79a0;
+  border-bottom: 2px solid #ff79a0;
 }
 
 @media (max-width: 768px) {

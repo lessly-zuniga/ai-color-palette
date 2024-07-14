@@ -1,12 +1,30 @@
 import React from 'react';
 import './Header.css';
 
-const Header = ({ scrollToInputSection, scrollToImagePaletteSection }) => {
+const Header = ({ activeSection, scrollToInputSection, scrollToImagePaletteSection }) => {
   return (
     <nav className="navbar-container">
       <div className="navbar-links">
-        <a href="#templates" className="nav-link" onClick={scrollToInputSection}>Color Palette Generator</a>
-        <a href="#features" className="nav-link" onClick={scrollToImagePaletteSection}>Image Palette Generator</a>
+        <a
+          href="#image-colors"
+          className={`nav-link ${activeSection === 'image' ? 'active' : ''}`}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToImagePaletteSection();
+          }}
+        >
+          Image Palette Generator
+        </a>
+        <a
+          href="#code-colors"
+          className={`nav-link ${activeSection === 'color' ? 'active' : ''}`}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToInputSection();
+          }}
+        >
+          Color Palette Generator
+        </a>
       </div>
     </nav>
   );
