@@ -1,8 +1,7 @@
 :root {
-  --primary-color: #5a4955;
-  --secondary-color: #f08ac9;
-  --secondary-hover-color: #ff99cc;
-  --background-color: #eaf1ff;
+  --primary-color: rgb(255 255 255);
+  --secondary-hover-color: #ccc;
+  --background-color: hwb(0 6% 94%);
   --input-background-color: #fff;
   --input-border-color: #ccc;
 }
@@ -15,15 +14,15 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
+p {
+  opacity: 0.5;
+}
 .app-container {
   display: flex;
   flex-direction: column;
 }
 
-.header-container,
-.input-section,
-.image-palette-section {
+.header-container {
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -40,11 +39,12 @@ body {
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .styled-button {
-  background-color: var(--secondary-color);
-  color: white;
+  background-color: rgb(255 255 255);
+  color: rgb(0, 0, 0);
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
@@ -92,7 +92,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   text-align: center;
 }
 
@@ -159,7 +158,7 @@ body {
   justify-content: center;
   font-size: 0.8em;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(152, 150, 207, 0.7);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
   cursor: pointer;
 }
 
@@ -174,7 +173,7 @@ body {
   height: 30px;
   border-radius: 50%;
   margin-right: 10px;
-  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
 }
 
 .color-slider-container {
@@ -235,9 +234,5 @@ body {
 
   .image-preview img {
     max-height: 300px;
-  }
-
-  .input-section {
-    margin-top: 150px;
   }
 }

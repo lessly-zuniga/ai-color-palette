@@ -6,6 +6,7 @@
   height: 100vh;
   text-align: center;
   position: relative;
+  margin-top: 30px;
 }
 
 .image-palette-content {
@@ -13,6 +14,9 @@
   align-items: stretch;
   width: 80%;
   margin-bottom: 20px;
+  background: black;
+  padding: 5rem 2rem;
+  border-radius: 18px;
 }
 
 .image-upload {
@@ -111,7 +115,7 @@
   height: 30px;
   border-radius: 50%;
   margin-right: 10px;
-  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
 }
 
 .color-slider-container {
@@ -191,4 +195,10 @@
 .color-swatch:hover .color-text {
   visibility: visible;
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .image-palette-section {
+    height: auto;
+  }
 }
