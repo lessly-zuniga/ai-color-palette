@@ -3,14 +3,12 @@ import './Header.css';
 
 const Header = ({ scrollToInputSection, scrollToImagePaletteSection }) => {
   return (
-    <div className="header-container">
-      <h1>AI Color Palette Generator</h1>
-      <p>Upload an image or select a starting color to generate a beautiful color palette.</p>
-      <div className="button-container">
-        <button className="styled-button" onClick={scrollToImagePaletteSection}>Upload Image</button>
-        <button className="styled-button" onClick={scrollToInputSection}>Select Color</button>
+    <nav className="navbar-container">
+      <div className="navbar-links">
+        <a href="#templates" className="nav-link" onClick={scrollToInputSection}>Color Palette Generator</a>
+        <a href="#features" className="nav-link" onClick={scrollToImagePaletteSection}>Image Palette Generator</a>
       </div>
-    </div>
+    </nav>
   );
 };
 
