@@ -40,3 +40,13 @@ export const isDarkColor = (color: string): boolean => {
   const brightness = (r * 299 + g * 587 + b * 114) / 1000;
   return brightness < 128;
 };
+
+export const generateProvisionalPalette = () => {
+  return [
+    '#fffefb', 
+    '#d4eaf7',
+    '#cccbc8',
+    '#71c4ef',
+    '#00668c',
+  ];
+};
