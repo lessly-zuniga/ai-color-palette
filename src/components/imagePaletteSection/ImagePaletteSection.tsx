@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./ImagePaletteSection.css";
 import ColorThief from "colorthief";
-import DefaultImage from "../../assets/images/default-palette-img.png";
+import DefaultImage from "../../assets/images/default-palette-img.jpeg";
 import ColorSlider from "../colorSlider/ColorSlider.tsx";
 import { isDarkColor, rgbToHex } from "../../utils/functions.ts";
 
@@ -108,7 +108,7 @@ const ImagePaletteSection = ({ onImageUpload, uploadedImage }) => {
         <div className="image-upload">
           <div>
             <h1>Image Palette Generator</h1>
-            <p>
+            <p style={{ marginBottom: 30 }}>
               Upload an image or select a starting color to generate a beautiful
               color palette.
             </p>
@@ -130,7 +130,7 @@ const ImagePaletteSection = ({ onImageUpload, uploadedImage }) => {
                   className="selected-color-preview"
                   style={{ backgroundColor: selectedColor }}
                 ></div>
-                <p>{selectedColor}</p>
+                <p className="selected-color-text">{selectedColor}</p>
               </div>
             )}
             <ColorSlider

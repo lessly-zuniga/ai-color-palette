@@ -4,7 +4,7 @@
   align-items: center;
   margin-top: 5vh;
   margin-bottom: 5vh;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .color-box {

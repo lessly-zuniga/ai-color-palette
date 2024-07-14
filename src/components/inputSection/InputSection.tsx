@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./InputSection.css";
 import PaletteDisplay from "../paletteDisplay/PaletteDisplay.tsx";
 import SavedPalettes from "../savedPalettes/SavedPalettes.tsx";
+import { generateProvisionalPalette } from "../../utils/functions.ts";
 
 interface InputSectionProps {
   generatePalette: (color: string) => Promise<void>;
@@ -13,12 +14,14 @@ interface SavedPalette {
   colors: string[];
 }
 
+
 const InputSection: React.FC<InputSectionProps> = ({
   generatePalette,
   palette,
 }) => {
   const [inputValue, setInputValue] = useState<string>("");
   const [savedPalettes, setSavedPalettes] = useState<SavedPalette[]>([]);
+  const provisionalPalette = generateProvisionalPalette();
 
   useEffect(() => {
     const storedPalettes = JSON.parse(
@@ -39,10 +42,9 @@ const InputSection: React.FC<InputSectionProps> = ({
 
   return (
     <div className="input-section">
-      <h1>Color Palette Generator from a Single Color</h1>
+      <h1>Generate Stunning Color Palettes from Hex or RGB</h1>
       <p style={{ marginBottom: 40, marginTop: 10 }}>
-        Enter a color in the input field, and AI will generate a harmonious
-        color palette for you.
+        Input a Hex or RGB color to instantly create a beautiful and cohesive color palette.
       </p>
       <div className="input-container">
         <input
@@ -56,7 +58,8 @@ const InputSection: React.FC<InputSectionProps> = ({
           Generate Palette
         </button>
       </div>
-      <PaletteDisplay palette={palette} />
+      <PaletteDisplay palette={palette.length > 0 ? palette : provisionalPalette} />
+      {savedPalettes.length > 0 && (<p style={{ marginBottom: 40, marginTop: 10, textAlign: 'left' }}>History</p> )}
       <SavedPalettes palettes={savedPalettes} />
     </div>
   );

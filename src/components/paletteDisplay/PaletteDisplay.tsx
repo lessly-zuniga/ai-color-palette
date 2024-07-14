@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./PaletteDisplay.css";
-import { hexToRgb, isDarkColor } from "../../utils/functions.ts";
+import { isDarkColor } from "../../utils/functions.ts";
 
 const PaletteDisplay = ({ palette }) => {
   const [copyMessage, setCopyMessage] = useState<string | null>(null);

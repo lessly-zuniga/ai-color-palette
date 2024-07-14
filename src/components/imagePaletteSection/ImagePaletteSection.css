@@ -102,20 +102,27 @@
   max-width: 100%;
   max-height: 300px;
 }
-
 .selected-color-display {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 20px;
+  width: 40%;
+  margin: 20px auto;
+  justify-content: space-around;
+  position: relative;
 }
 
 .selected-color-preview {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  margin-right: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  border: 1px solid #ccc;
+  position: absolute;
+  left: 0;
+}
+
+.selected-color-text {
+  margin-left: 40px;
+  white-space: nowrap;
 }
 
 .color-slider-container {
@@ -157,12 +164,23 @@
   align-items: center;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 .copy-message {
   position: fixed;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(30, 30, 30);
   color: white;
   padding: 10px 20px;
   border-radius: 25px;
@@ -172,12 +190,8 @@
   gap: 10px;
   font-size: 0.9em;
   font-weight: bold;
-}
-
-.copy-message::before {
-  content: "✔";
-  font-size: 1.2em;
-  color: #4caf50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  animation: fadeInUp 0.5s ease-out;
 }
 
 .color-text {
@@ -200,5 +214,9 @@
 @media (max-width: 768px) {
   .image-palette-section {
     height: auto;
+  }
+
+  .selected-color-display {
+    width: 70%;
   }
 }

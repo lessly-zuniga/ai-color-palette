@@ -14,9 +14,15 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+h1 {
+  font-size: 2.3rem;
+}
+
 p {
   opacity: 0.5;
 }
+
 .app-container {
   display: flex;
   flex-direction: column;
@@ -51,6 +57,7 @@ p {
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s ease;
+  font-weight: 600;
 }
 
 .styled-button:hover {
