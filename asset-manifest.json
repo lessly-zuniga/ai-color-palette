@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/lessly-zuniga/ai-color-palette/static/css/main.180e65b6.css",
+    "main.js": "/lessly-zuniga/ai-color-palette/static/js/main.ac339f6e.js",
+    "static/js/453.ca5cfa1f.chunk.js": "/lessly-zuniga/ai-color-palette/static/js/453.ca5cfa1f.chunk.js",
+    "static/media/default-palette-img.jpeg": "/lessly-zuniga/ai-color-palette/static/media/default-palette-img.f0acfc55e139dad029e5.jpeg",
+    "index.html": "/lessly-zuniga/ai-color-palette/index.html",
+    "main.180e65b6.css.map": "/lessly-zuniga/ai-color-palette/static/css/main.180e65b6.css.map",
+    "main.ac339f6e.js.map": "/lessly-zuniga/ai-color-palette/static/js/main.ac339f6e.js.map",
+    "453.ca5cfa1f.chunk.js.map": "/lessly-zuniga/ai-color-palette/static/js/453.ca5cfa1f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.180e65b6.css",
+    "static/js/main.ac339f6e.js"
+  ]
+}
